@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Ratings Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='badbg.png') }}");
+	    position: relative;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-top:20px;
+
+        }
+        a {
+            color: rgb(255, 255, 255);
+            border-bottom: 2px solid #17175c;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Add relative positioning for absolute positioning */
+        }
+        .container img {
+            width: 200px; /* Adjust the width of the image */
+            display: block;
+            margin: 20px; /* Center the image horizontally */
+            position: relative;
+            top: 0;
+            left: 45%;
+            transform: translateX(-50%);
+            border-radius: 10px 10px 0 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px; /* Add space between the image and title */
+        }
+        p {
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+            <!-- Link to go back to form.html -->
+            <a href="{{ url_for('form') }}">Back to Form</a> |
+            <!-- Link to go back to home.html -->
+            <a href="{{ url_for('home') }}">Back to Home</a>
+    <div class="container">
+        <img src="{{ url_for('static', filename='bad.png') }}" alt="Background Image">
+	<h1>Try your luck with another restaurant!</h1>
+        <p>Unfortunately, the restaurant you selected has received poor ratings.</p>
+
+    </div>
+</body>
+</html>

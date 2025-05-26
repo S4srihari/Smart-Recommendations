@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='bg.png') }}");
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            text-align: center;
+            color: #fff
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+
+            width: 150px; /* Adjust width as needed */
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: calc(100% - 170px); /* Adjust width to fit beside label */
+            padding: 8px;
+            margin-bottom: 0px;
+            margin-left:100px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Welcome to our website for the restaurant recommendation system project! Dive into a world where your dining preferences shape your next meal adventure.</h2>
+<h3>Unlock insights with just a few clicks -  Predict your next dining destination</h3>
+<br><br>
+
+<form action="{{ url_for('submit') }}" method="post">
+    <label for="name">Restaurant Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter the name of the Restaurant" required><br><br>
+
+
+    <label for="online_order">Online Ordering Preference:</label>
+    <select id="online_order" name="online_order" required>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select><br><br>
+    
+    <label for="booking">Booking Preference:</label>
+    <select id="booking" name="booking" required>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select><br><br>
+
+    <label for="votes">Votes (Preference):</label>
+    <input type="number" id="votes" name="votes" placeholder="Enter number of votes" required><br><br>
+
+<label for="location">Location Preferred:</label>
+<select id="location" name="location" required>
+    <option value="0">BTM</option>
+    <option value="1">Banashankari</option>
+    <option value="2">Banaswadi</option>
+    <option value="3">Bannerghatta Road</option>
+    <option value="4">Basavanagudi</option>
+    <option value="5">Basaveshwara Nagar</option>
+    <option value="6">Bellandur</option>
+    <option value="7">Bommanahalli</option>
+    <option value="8">Brigade Road</option>
+    <option value="9">Brookefield</option>
+    <option value="10">CV Raman Nagar</option>
+    <option value="11">Central Bangalore</option>
+    <option value="12">Church Street</option>
+    <option value="13">City Market</option>
+    <option value="14">Commercial Street</option>
+    <option value="15">Cunningham Road</option>
+    <option value="16">Domlur</option>
+    <option value="17">East Bangalore</option>
+    <option value="18">Ejipura</option>
+    <option value="19">Electronic City</option>
+    <option value="20">Frazer Town</option>
+    <option value="21">HBR Layout</option>
+    <option value="22">HSR</option>
+    <option value="23">Hebbal</option>
+    <option value="24">Hennur</option>
+    <option value="25">Hosur Road</option>
+    <option value="26">ITPL Main Road, Whitefield</option>
+    <option value="27">Indiranagar</option>
+    <option value="28">Infantry Road</option>
+    <option value="29">JP Nagar</option>
+    <option value="30">Jakkur</option>
+    <option value="31">Jalahalli</option>
+    <option value="32">Jayanagar</option>
+    <option value="33">Jeevan Bhima Nagar</option>
+    <option value="34">KR Puram</option>
+    <option value="35">Kaggadasapura</option>
+    <option value="36">Kalyan Nagar</option>
+    <option value="37">Kammanahalli</option>
+    <option value="38">Kanakapura Road</option>
+    <option value="39">Kengeri</option>
+    <option value="40">Koramangala</option>
+    <option value="41">Koramangala 1st Block</option>
+    <option value="42">Koramangala 2nd Block</option>
+    <option value="43">Koramangala 3rd Block</option>
+    <option value="44">Koramangala 4th Block</option>
+    <option value="45">Koramangala 5th Block</option>
+    <option value="46">Koramangala 6th Block</option>
+    <option value="47">Koramangala 7th Block</option>
+    <option value="48">Koramangala 8th Block</option>
+    <option value="49">Kumaraswamy Layout</option>
+    <option value="50">Langford Town</option>
+    <option value="51">Lavelle Road</option>
+    <option value="52">MG Road</option>
+    <option value="53">Magadi Road</option>
+    <option value="54">Majestic</option>
+    <option value="55">Malleshwaram</option>
+    <option value="56">Marathahalli</option>
+    <option value="57">Mysore Road</option>
+    <option value="58">Nagarbhavi</option>
+    <option value="59">Nagawara</option>
+    <option value="60">New BEL Road</option>
+    <option value="61">North Bangalore</option>
+    <option value="62">Old Airport Road</option>
+    <option value="63">Old Madras Road</option>
+    <option value="64">Peenya</option>
+    <option value="65">RT Nagar</option>
+    <option value="66">Race Course Road</option>
+    <option value="67">Rajajinagar</option>
+    <option value="68">Rajarajeshwari Nagar</option>
+    <option value="69">Rammurthy Nagar</option>
+    <option value="70">Residency Road</option>
+    <option value="71">Richmond Road</option>
+    <option value="72">Sadashiv Nagar</option>
+    <option value="73">Sahakara Nagar</option>
+    <option value="74">Sanjay Nagar</option>
+    <option value="75">Sankey Road</option>
+    <option value="76">Sarjapur Road</option>
+    <option value="77">Seshadripuram</option>
+    <option value="78">Shanti Nagar</option>
+    <option value="79">Shivajinagar</option>
+    <option value="80">South Bangalore</option>
+    <option value="81">St. Marks Road</option>
+    <option value="82">Thippasandra</option>
+    <option value="83">Ulsoor</option>
+    <option value="84">Uttarahalli</option>
+    <option value="85">Varthur Main Road, Whitefield</option>
+    <option value="86">Vasanth Nagar</option>
+    <option value="87">Vijay Nagar</option>
+    <option value="88">West Bangalore</option>
+    <option value="89">Whitefield</option>
+    <option value="90">Wilson Garden</option>
+    <option value="91">Yelahanka</option>
+    <option value="92">Yeshwantpur</option>
+</select><br><br>
+
+
+<label for="rest_type">Restaurant Categories Preference:</label>
+<select id="rest_type" name="rest_type" required>
+    <option value="0">Bakery</option>
+    <option value="1">Bakery, Beverage Shop</option>
+    <option value="2">Bakery, Cafe</option>
+    <option value="3">Bakery, Dessert Parlor</option>
+    <option value="4">Bakery, Food Court</option>
+    <option value="5">Bakery, Kiosk</option>
+    <option value="6">Bakery, Quick Bites</option>
+    <option value="7">Bakery, Sweet Shop</option>
+    <option value="8">Bar</option>
+    <option value="9">Bar, Cafe</option>
+    <option value="10">Bar, Casual Dining</option>
+    <option value="11">Bar, Lounge</option>
+    <option value="12">Bar, Pub</option>
+    <option value="13">Bar, Quick Bites</option>
+    <option value="14">Beverage Shop</option>
+    <option value="15">Beverage Shop, Cafe</option>
+    <option value="16">Beverage Shop, Dessert Parlor</option>
+    <option value="17">Beverage Shop, Quick Bites</option>
+    <option value="18">Bhojanalya</option>
+    <option value="19">Cafe</option>
+    <option value="20">Cafe, Bakery</option>
+    <option value="21">Cafe, Bar</option>
+    <option value="22">Cafe, Casual Dining</option>
+    <option value="23">Cafe, Dessert Parlor</option>
+    <option value="24">Cafe, Food Court</option>
+    <option value="25">Cafe, Lounge</option>
+    <option value="26">Cafe, Quick Bites</option>
+    <option value="27">Casual Dining</option>
+    <option value="28">Casual Dining, Bar</option>
+    <option value="29">Casual Dining, Cafe</option>
+    <option value="30">Casual Dining, Irani Cafee</option>
+    <option value="31">Casual Dining, Lounge</option>
+    <option value="32">Casual Dining, Microbrewery</option>
+    <option value="33">Casual Dining, Pub</option>
+    <option value="34">Casual Dining, Quick Bites</option>
+    <option value="35">Casual Dining, Sweet Shop</option>
+    <option value="36">Club</option>
+    <option value="37">Club, Casual Dining</option>
+    <option value="38">Confectionery</option>
+    <option value="39">Delivery</option>
+    <option value="40">Dessert Parlor</option>
+    <option value="41">Dessert Parlor, Bakery</option>
+    <option value="42">Dessert Parlor, Beverage Shop</option>
+    <option value="43">Dessert Parlor, Cafe</option>
+    <option value="44">Dessert Parlor, Food Court</option>
+    <option value="45">Dessert Parlor, Kiosk</option>
+    <option value="46">Dessert Parlor, Quick Bites</option>
+    <option value="47">Dessert Parlor, Sweet Shop</option>
+    <option value="48">Dhaba</option>
+    <option value="49">Fine Dining</option>
+    <option value="50">Fine Dining, Bar</option>
+    <option value="51">Fine Dining, Lounge</option>
+    <option value="52">Fine Dining, Microbrewery</option>
+    <option value="53">Food Court</option>
+    <option value="54">Food Court, Beverage Shop</option>
+    <option value="55">Food Court, Casual Dining</option>
+    <option value="56">Food Court, Dessert Parlor</option>
+    <option value="57">Food Court, Quick Bites</option>
+    <option value="58">Food Truck</option>
+    <option value="59">Kiosk</option>
+    <option value="60">Lounge</option>
+    <option value="61">Lounge, Bar</option>
+    <option value="62">Lounge, Cafe</option>
+    <option value="63">Lounge, Casual Dining</option>
+    <option value="64">Lounge, Microbrewery</option>
+    <option value="65">Mess</option>
+    <option value="66">Mess, Quick Bites</option>
+    <option value="67">Microbrewery</option>
+    <option value="68">Microbrewery, Bar</option>
+    <option value="69">Microbrewery, Casual Dining</option>
+    <option value="70">Microbrewery, Lounge</option>
+    <option value="71">Microbrewery, Pub</option>
+    <option value="72">Pop Up</option>
+    <option value="73">Pub</option>
+    <option value="74">Pub, Bar</option>
+    <option value="75">Pub, Cafe</option>
+    <option value="76">Pub, Casual Dining</option>
+    <option value="77">Pub, Microbrewery</option>
+    <option value="78">Quick Bites</option>
+    <option value="79">Quick Bites, Bakery</option>
+    <option value="80">Quick Bites, Beverage Shop</option>
+    <option value="81">Quick Bites, Cafe</option>
+    <option value="82">Quick Bites, Dessert Parlor</option>
+    <option value="83">Quick Bites, Food Court</option>
+    <option value="84">Quick Bites, Kiosk</option>
+    <option value="85">Quick Bites, Meat Shop</option>
+    <option value="86">Quick Bites, Mess</option>
+    <option value="87">Quick Bites, Sweet Shop</option>
+    <option value="88">Sweet Shop</option>
+    <option value="89">Sweet Shop, Dessert Parlor</option>
+    <option value="90">Sweet Shop, Quick Bites</option>
+    <option value="91">Takeaway</option>
+    <option value="92">Takeaway, Delivery</option>
+</select><br><br>
+
+
+    <label for="cost">Cost Preference(for two):</label>
+    <input type="number" id="cost" name="cost" placeholder="Enter cost preference for two" required><br><br>
+
+<label for="types">Preferred Dining Experience:</label>
+<select id="types" name="types" required>
+    <option value="0">Buffet</option>
+    <option value="1">Cafes</option>
+    <option value="2">Delivery</option>
+    <option value="3">Desserts</option>
+    <option value="4">Dine-out</option>
+    <option value="5">Drinks & nightlife</option>
+    <option value="6">Pubs and bars</option>
+</select><br><br>
+
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
