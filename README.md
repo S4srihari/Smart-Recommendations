@@ -52,8 +52,8 @@ Here is a brief overview of the key files and directories in this project:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/S4srihari/Full-Stack-smart-Recommendations-with-ML-on-backend.git](https://github.com/S4srihari/Full-Stack-smart-Recommendations-with-ML-on-backend.git)
-    cd Full-Stack-smart-Recommendations-with-ML-on-backend
+    git clone [https://github.com/S4srihari/Smart-Recommendations.git](https://github.com/S4srihari/Smart-Recommendations.git)
+    cd Smart-Recommendations
     ```
 
 2.  **Set up a virtual environment (recommended):**
